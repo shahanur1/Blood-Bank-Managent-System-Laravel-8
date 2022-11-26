@@ -1,0 +1,63 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+RewriteCond %{HTTP_REFERER} !^http://blog.shagor.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://blog.shagor.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://blood.shagor.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://blood.shagor.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://jannatfashion.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://jannatfashion.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://shagor.jannatfashion.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://shagor.jannatfashion.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://shagor.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://shagor.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.blog.shagor.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.blog.shagor.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.blood.shagor.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.blood.shagor.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.jannatfashion.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.jannatfashion.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.shagor.jannatfashion.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.shagor.jannatfashion.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.shagor.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.shagor.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://blog.shagor.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://blog.shagor.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://blood.shagor.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://blood.shagor.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://jannatfashion.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://jannatfashion.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://shagor.jannatfashion.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://shagor.jannatfashion.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://shagor.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://shagor.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.blog.shagor.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.blog.shagor.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.blood.shagor.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.blood.shagor.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.jannatfashion.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.jannatfashion.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.shagor.jannatfashion.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.shagor.jannatfashion.xyz$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.shagor.xyz/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.shagor.xyz$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
